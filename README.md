@@ -56,3 +56,5 @@ Este proyecto se ha desarrollado como parte de una práctica académica utilizan
 ## 🎓 Proyecto académico
 
 Este proyecto forma parte de la asignatura **PC01** y tiene como objetivo diseñar una plataforma web académica inspirada en sistemas como Moodle o Google Classroom.
+
+**Creadores** Laura, Guillem y Ariadna
