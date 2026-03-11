@@ -1,5 +1,6 @@
 const express = require("express");
 const eventRoutes = require("./routes/eventRoutes");
+const subjectRoutes = require("./routes/subjectRoutes");
 
 const app = express();
 const PORT = 3000;
@@ -11,6 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/events", eventRoutes);
+app.use("/subjects", subjectRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
