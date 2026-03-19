@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const subjectController = require("../controllers/subjectController");
 
-router.get("/", (req, res) => {
-res.json({ message: "Lista de asignaturas" });
-});
+router.get("/", subjectController.getSubjects);
 
 module.exports = router;
