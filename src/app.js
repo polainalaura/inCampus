@@ -11,7 +11,7 @@ const express = require("express");
 const eventRoutes = require("./routes/eventRoutes");
 const subjectRoutes = require("./routes/subjectRoutes");
 const userRoutes = require("./routes/userRoutes"); // 👈 añadimos esto
-const tutoriaRoutes = require("./routes/tutoriaRoutes");
+const tutoriaRoutes = require("./routes/tutorialRoutes");
 
 const db = require("./config/db"); // 👈 conexión MySQL
 

@@ -3,7 +3,7 @@
 const express = require("express");
 const router = express.Router();
 
-const tutoriaController = require("../controllers/tutoriaController");
+const tutoriaController = require("../controllers/tutorialController");
 
 router.get("/", tutoriaController.getTutorias);
 
