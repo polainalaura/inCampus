@@ -1,3 +1,11 @@
+// iniicio del servidor y configuración de rutas
+// cargar configuración y arrancar la API
+
+/* app.js = recepción de un hotel
+routes = recepcionistas
+controllers = empleados que hacen el trabajo
+database = archivo donde se guarda todo*/
+
 const express = require("express");
 
 const eventRoutes = require("./routes/eventRoutes");
