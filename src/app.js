@@ -12,11 +12,15 @@ const eventRoutes = require("./routes/eventRoutes");
 const subjectRoutes = require("./routes/subjectRoutes");
 const userRoutes = require("./routes/userRoutes"); // 👈 añadimos esto
 const tutoriaRoutes = require("./routes/tutorialRoutes");
+const authRoutes = require("./routes/authRoutes");
+
 
 const db = require("./config/db"); // 👈 conexión MySQL
 
 const app = express();
 const PORT = 3000;
+
+app.use("/auth", authRoutes);
 
 app.use(express.json());
 
