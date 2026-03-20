@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const Usuario = require("../models/User"); // ajusta la ruta
+const Usuario = require("../models/User");
 
 // =======================
 // REGISTER
@@ -9,17 +9,13 @@ const register = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
-    // Validación básica
     if (!email || !password) {
       return res.status(400).json({
         message: "Email y contraseña son obligatorios",
       });
     }
 
-    // Comprobar si ya existe
-    const usuarioExistente = await Usuario.findOne({
-      where: { email },
-    });
+    const usuarioExistente = await Usuario.obtenerUsuarioPorEmail(email);
 
     if (usuarioExistente) {
       return res.status(400).json({
@@ -27,22 +23,13 @@ const register = async (req, res, next) => {
       });
     }
 
-    // Hash de contraseña
-    const saltRounds = 10;
-    const password_hash = await bcrypt.hash(password, saltRounds);
+    const password_hash = await bcrypt.hash(password, 10);
 
-    // Crear usuario
-    const nuevoUsuario = await Usuario.create({
-      email,
-      password_hash,
-    });
+    const nuevoUsuario = await Usuario.crearUsuario(email, password_hash);
 
     res.status(201).json({
       message: "Usuario registrado correctamente",
-      usuario: {
-        id: nuevoUsuario.id,
-        email: nuevoUsuario.email,
-      },
+      usuario: nuevoUsuario,
     });
   } catch (error) {
     next(error);
@@ -56,17 +43,7 @@ const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
-    // Validación básica
-    if (!email || !password) {
-      return res.status(400).json({
-        message: "Email y contraseña son obligatorios",
-      });
-    }
-
-    // Buscar usuario
-    const usuario = await Usuario.findOne({
-      where: { email },
-    });
+    const usuario = await Usuario.obtenerUsuarioPorEmail(email);
 
     if (!usuario) {
       return res.status(401).json({
@@ -74,7 +51,6 @@ const login = async (req, res, next) => {
       });
     }
 
-    // Comparar contraseña
     const passwordValida = await bcrypt.compare(
       password,
       usuario.password_hash
@@ -86,31 +62,28 @@ const login = async (req, res, next) => {
       });
     }
 
-    // Generar token
     const token = jwt.sign(
       {
         id: usuario.id,
         email: usuario.email,
       },
       process.env.JWT_SECRET,
-      {
-        expiresIn: process.env.JWT_EXPIRES_IN || "1h",
-      }
+      { expiresIn: "1h" }
     );
 
     res.json({
       message: "Login correcto",
       token,
-      usuario: {
-        id: usuario.id,
-        email: usuario.email,
-      },
     });
   } catch (error) {
     next(error);
   }
 };
 
+module.exports = {
+  register,
+  login,
+};
 module.exports = {
   register,
   login,
