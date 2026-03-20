@@ -1,5 +1,17 @@
 const db = require("../config/db");
 
+// Obtener todos los usuarios
+const obtenerUsuarios = () => {
+  return new Promise((resolve, reject) => {
+    const sql = "SELECT * FROM usuario";
+
+    db.query(sql, (err, results) => {
+      if (err) return reject(err);
+      resolve(results);
+    });
+  });
+};
+
 // Buscar usuario por email
 const obtenerUsuarioPorEmail = (email) => {
   return new Promise((resolve, reject) => {
@@ -7,7 +19,7 @@ const obtenerUsuarioPorEmail = (email) => {
 
     db.query(sql, [email], (err, results) => {
       if (err) return reject(err);
-      resolve(results[0]); // solo uno
+      resolve(results[0]);
     });
   });
 };
@@ -29,6 +41,7 @@ const crearUsuario = (email, password_hash) => {
 };
 
 module.exports = {
+  obtenerUsuarios,
   obtenerUsuarioPorEmail,
   crearUsuario,
 };
