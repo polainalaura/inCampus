@@ -152,25 +152,31 @@ INSERT INTO `reserva_tutoria` (`id_reserva`, `fecha_reserva`, `estado`, `motivo`
 -- Estructura de tabla para la tabla `tutoria`
 --
 
+
 CREATE TABLE `tutoria` (
   `id_tutoria` int(11) NOT NULL,
   `fecha_inicio` datetime NOT NULL,
   `fecha_fin` datetime NOT NULL,
   `ubicacion` varchar(150) DEFAULT NULL,
   `estado_slot` enum('DISPONIBLE','RESERVADA','CANCELADA') DEFAULT 'DISPONIBLE',
-  `id_profesor` int(11) NOT NULL
+  `id_profesor` int(11) NOT NULL,
+  `id_alumno` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 --
 -- Volcado de datos para la tabla `tutoria`
 --
 
-INSERT INTO `tutoria` (`id_tutoria`, `fecha_inicio`, `fecha_fin`, `ubicacion`, `estado_slot`, `id_profesor`) VALUES
-(1, '2025-03-01 10:00:00', '2025-03-01 11:00:00', 'Aula 1', 'DISPONIBLE', 1),
-(2, '2025-03-02 09:00:00', '2025-03-02 10:00:00', 'Aula 2', 'DISPONIBLE', 2),
-(3, '2025-03-03 12:00:00', '2025-03-03 13:00:00', 'Aula 3', 'DISPONIBLE', 3),
-(4, '2025-03-04 10:00:00', '2025-03-04 11:00:00', 'Aula 1', 'DISPONIBLE', 1),
-(5, '2025-03-05 09:00:00', '2025-03-05 10:00:00', 'Aula 2', 'DISPONIBLE', 2);
+
+INSERT INTO `tutoria` (`id_tutoria`, `fecha_inicio`, `fecha_fin`, `ubicacion`, `estado_slot`, `id_profesor`, `id_alumno`) VALUES
+(1, '2025-03-01 10:00:00', '2025-03-01 11:00:00', 'Aula 1', 'DISPONIBLE', 1, NULL),
+(2, '2025-03-02 09:00:00', '2025-03-02 10:00:00', 'Aula 2', 'DISPONIBLE', 2, NULL),
+(3, '2025-03-03 12:00:00', '2025-03-03 13:00:00', 'Aula 3', 'DISPONIBLE', 3, NULL),
+(4, '2025-03-04 10:00:00', '2025-03-04 11:00:00', 'Aula 1', 'DISPONIBLE', 1, NULL),
+(5, '2025-03-05 09:00:00', '2025-03-05 10:00:00', 'Aula 2', 'DISPONIBLE', 2, NULL),
+(6, '2025-03-05 11:00:00', '2025-03-05 12:00:00', 'Aula 3', 'DISPONIBLE', 2, NULL);
+
 
 -- --------------------------------------------------------
 
