@@ -260,7 +260,9 @@ ALTER TABLE `reserva_tutoria`
 --
 ALTER TABLE `tutoria`
   ADD PRIMARY KEY (`id_tutoria`),
-  ADD KEY `idx_tutoria_profesor` (`id_profesor`);
+  ADD KEY `idx_tutoria_profesor` (`id_profesor`),
+  ADD KEY `idx_tutoria_alumno` (`id_alumno`);
+
 
 --
 -- Indices de la tabla `usuario`
@@ -340,8 +342,12 @@ ALTER TABLE `reserva_tutoria`
 -- Filtros para la tabla `tutoria`
 --
 ALTER TABLE `tutoria`
-  ADD CONSTRAINT `tutoria_ibfk_1` FOREIGN KEY (`id_profesor`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `tutoria_ibfk_1` FOREIGN KEY (`id_profesor`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tutoria_ibfk_2` FOREIGN KEY (`id_alumno`) REFERENCES `usuario` (`id_usuario`) ON DELETE SET NULL ON UPDATE CASCADE;
+
 COMMIT;
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
