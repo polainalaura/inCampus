@@ -192,7 +192,7 @@ CREATE TABLE evento (
 INSERT INTO evento VALUES
 (1,'Charla IA','Introducción a la inteligencia artificial','2026-05-10 10:00','Aula 1',2);
 
-========================================================
+-- ========================================================
 -- TABLA: pdf_profesor
 -- ========================================================
 
