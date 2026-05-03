@@ -193,39 +193,6 @@ INSERT INTO evento VALUES
 (1,'Charla IA','Introducción a la inteligencia artificial','2026-05-10 10:00','Aula 1',2);
 
 -- ========================================================
--- TABLA: pdf_profesor
--- ========================================================
-
-CREATE TABLE pdf_profesor (
-  id_pdf INT AUTO_INCREMENT,
-  titulo VARCHAR(200) NOT NULL,
-  nombre_archivo VARCHAR(255) NOT NULL,
-  ruta_archivo VARCHAR(255) NOT NULL,
-  tamano INT NOT NULL,
-  fecha_subida TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  id_profesor INT NOT NULL,
-  id_asignatura INT DEFAULT NULL,
-  id_evento INT DEFAULT NULL,
-  PRIMARY KEY (id_pdf),
-  KEY idx_pdf_profesor (id_profesor),
-  KEY idx_pdf_asignatura (id_asignatura),
-  KEY idx_pdf_evento (id_evento),
-  CONSTRAINT fk_pdf_profesor FOREIGN KEY (id_profesor) REFERENCES usuario(id_usuario) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT fk_pdf_asignatura FOREIGN KEY (id_asignatura) REFERENCES asignatura(id_asignatura) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT fk_pdf_evento FOREIGN KEY (id_evento) REFERENCES evento(id_evento) ON DELETE SET NULL ON UPDATE CASCADE
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; 
-
-
--- ========================================================
--- INSERT: pdf_profesor
--- ========================================================
-
-INSERT INTO pdf_profesor (titulo, nombre_archivo, ruta_archivo, tamano, id_profesor, id_asignatura, id_evento) VALUES
- ('Tema 3 - Bases de Datos','tema3_bd.pdf','/uploads/pdfs/tema3_bd.pdf',345678,1,1,NULL),
-('Material Charla Ciberseguridad','charla_ciberseguridad.pdf','/uploads/pdfs/charla_ciberseguridad.pdf',289000,2,NULL,1);
-
-
--- ========================================================
 -- INDICES ADICIONALES
 -- ========================================================
 CREATE INDEX idx_usuario_nombre ON usuario(nombre);
