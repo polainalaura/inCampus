@@ -35,6 +35,7 @@ INSERT INTO usuario (id_usuario,nombre,apellido1,apellido2,email,password_hash,r
 (8,'Sergio','Vazquez','Molina','sergio.vazquez@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO'),
 (9,'Elena','Castro','Ortega','elena.castro@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO'),
 (10,'Javier','Herrera','Gil','javier.herrera@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO');
+(11,'Test','Prueba','Prueba','alumno@test.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO');
 
 -- ========================================================
 -- TABLA: asignatura
