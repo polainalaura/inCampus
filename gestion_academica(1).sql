@@ -25,17 +25,17 @@ CREATE TABLE usuario (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO usuario (id_usuario,nombre,apellido1,apellido2,email,password_hash,rol) VALUES
-(1,'Carlos','Lopez','Garcia','carlos.lopez@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','PROFESOR'),
-(2,'Ana','Martinez','Ruiz','ana.martinez@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','PROFESOR'),
-(3,'Laura','Sanchez','Perez','laura.sanchez@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','PROFESOR'),
-(4,'Mario','Fernandez','Diaz','mario.fernandez@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO'),
-(5,'Lucia','Gomez','Navarro','lucia.gomez@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO'),
-(6,'David','Torres','Santos','david.torres@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO'),
-(7,'Paula','Romero','Iglesias','paula.romero@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO'),
-(8,'Sergio','Vazquez','Molina','sergio.vazquez@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO'),
-(9,'Elena','Castro','Ortega','elena.castro@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO'),
-(10,'Javier','Herrera','Gil','javier.herrera@email.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO');
-(11,'Test','Prueba','Prueba','alumno@test.com','$2b$10$gL6fZQmTzYpXAjM2CYViAOCXqYwRmCg1JEaLkPQL6nvj.Qkco8Ciq','ALUMNO');
+(1,'Carlos','Lopez','Garcia','carlos.lopez@email.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','PROFESOR'),
+(2,'Ana','Martinez','Ruiz','ana.martinez@email.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','PROFESOR'),
+(3,'Laura','Sanchez','Perez','laura.sanchez@email.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','PROFESOR'),
+(4,'Mario','Fernandez','Diaz','mario.fernandez@email.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','ALUMNO'),
+(5,'Lucia','Gomez','Navarro','lucia.gomez@email.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','ALUMNO'),
+(6,'David','Torres','Santos','david.torres@email.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','ALUMNO'),
+(7,'Paula','Romero','Iglesias','paula.romero@email.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','ALUMNO'),
+(8,'Sergio','Vazquez','Molina','sergio.vazquez@email.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','ALUMNO'),
+(9,'Elena','Castro','Ortega','elena.castro@email.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','ALUMNO'),
+(10,'Javier','Herrera','Gil','javier.herrera@email.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','ALUMNO');
+(11,'Test','Prueba','Prueba','alumno@test.com','$2b$10$k6JxQMQ2gA3d/LWEVUqmGeA2ImlmopIKHoDdcs5VCcdBnf9lMSTAm','ALUMNO');
 
 -- ========================================================
 -- TABLA: asignatura
